@@ -7,5 +7,5 @@ const baseAxios = axios.create({
 
 export default {
   departure: (airport: string) => baseAxios.get(`/${airport}`),
-  leg: (departure: string, arrival: string) => baseAxios.get(`/${departure}/${arrival}`)
+  journey: (departure: string, arrival: string) => baseAxios.get(`/${departure}/${arrival}`)
 }

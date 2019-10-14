@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react"
-import api from "../../api"
-import { object } from "prop-types"
-import { Icon, Header } from "semantic-ui-react"
+import React, { useEffect, useState } from 'react'
+import api from '../../api'
+import { object } from 'prop-types'
+import { Icon, Header } from 'semantic-ui-react'
 
 export const Departure = () => {
   const [departData, setDepartData]: [any[], any] = useState([])
@@ -21,7 +21,7 @@ export const Departure = () => {
   }
 
   const getDateWithMaxFlights = () => {
-    let maxDate = ""
+    let maxDate = ''
     let maxCount = 0
 
     const flightCount = countFlights()
@@ -36,7 +36,7 @@ export const Departure = () => {
   }
 
   const fetchData = async () => {
-    const { data } = await api.departure("MAN")
+    const { data } = await api.departure('MAN')
     await setDepartData(data)
   }
 
