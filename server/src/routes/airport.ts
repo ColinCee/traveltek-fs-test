@@ -1,5 +1,5 @@
 import express from 'express'
-import { filterByDepature } from '@src/parser/AirportParser'
+import { filterByDepature, filterByDepartureAndArrival } from '@src/parser/AirportParser'
 const departure = express.Router()
 
 // middleware that is specific to this router
@@ -15,7 +15,9 @@ departure.get('/:airport', async (req, res) => {
 })
 
 departure.get('/:departure/:arrival', async (req, res) => {
-  res.send(`Received ${req.params}`)
+  const { departure, arrival } = req.params
+  const data = await filterByDepartureAndArrival(departure, arrival)
+  res.send(data)
 })
 
 export default departure
