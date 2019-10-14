@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Image, Header } from "semantic-ui-react";
 import styled from "styled-components";
+import { Container, Image, Header } from "semantic-ui-react";
 
-export const Statistics: React.FC = () => {
-  const heading = ({ className, children }: any) => {
+export const Heading = () => {
+  const component = ({ className, children }: any) => {
     return (
       <div className={className}>
         <Header as="h1">
@@ -14,15 +14,13 @@ export const Statistics: React.FC = () => {
     );
   };
 
-  const Heading = styled(heading)`
+  const StyledComponent = styled(component)`
     margin-top: 1em;
   `;
 
   return (
     <div>
-      <Container>
-        <Heading />
-      </Container>
+      <StyledComponent />
     </div>
   );
 };
