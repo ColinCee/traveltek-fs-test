@@ -1,5 +1,5 @@
 import express from 'express'
-import { parseDepartureAirport } from '@src/parser/AirportParser'
+import { filterByDepartureAirport } from '@src/parser/AirportParser'
 const airport = express.Router()
 
 // middleware that is specific to this router
@@ -10,7 +10,7 @@ airport.use(function timeLog(req, res, next) {
 
 airport.get('/:airport', async (req, res) => {
   const airport = req.params.airport
-  const data = await parseDepartureAirport(airport)
+  const data = await filterByDepartureAirport(airport)
   res.send(data)
 })
 
