@@ -26,10 +26,7 @@ export const SwedishFlights = () => {
   return (
     <Component>
       <h2>Percentage of total flights to Sweden</h2>
-      <h3>
-        {percentage}
-        <Icon name='percent' size='small' />
-      </h3>
+      <p>{percentage}%</p>
     </Component>
   )
 }
