@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import api from '../../api'
+import { Icon } from 'semantic-ui-react'
 
 export const FlightClass = () => {
   const [percentage, setPercentage] = useState(0)
@@ -22,7 +23,10 @@ export const FlightClass = () => {
   return (
     <div>
       <h2>Percentage of flights that are business class</h2>
-      {percentage} %
+      <h3>
+        {percentage}
+        <Icon name='percent' size='small' />
+      </h3>
     </div>
   )
 }
