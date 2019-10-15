@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import api from '../../api'
+import { calculateAverageJourneyTime } from './dataProcessor/journeyTime'
+import { Header, Icon } from 'semantic-ui-react'
+import styled from 'styled-components'
+
 export const JourneyTime = () => {
   const [journeys, setJourneys] = useState([])
 
@@ -12,6 +16,30 @@ export const JourneyTime = () => {
     fetchData()
   }, [])
 
-  console.log(journeys)
-  return <div></div>
+  const Component = styled.div`
+    margin-bottom: 2em;
+  `
+  const heading = ({ className, children }: any) => {
+    return (
+      <h1 className={className}>
+        Average journey time - LHR
+        <Icon name='arrow right' size='small' />
+        BXH
+      </h1>
+    )
+  }
+
+  const StyledHeading = styled(heading)`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  `
+  return (
+    <Component>
+      <StyledHeading />
+      <Icon name='clock outline' />
+      {calculateAverageJourneyTime(journeys)}
+    </Component>
+  )
 }
