@@ -21,11 +21,11 @@ export const JourneyTime = () => {
   `
   const heading = ({ className, children }: any) => {
     return (
-      <h1 className={className}>
+      <h2 className={className}>
         Average journey time - LHR
         <Icon name='arrow right' size='small' />
         BXH
-      </h1>
+      </h2>
     )
   }
 

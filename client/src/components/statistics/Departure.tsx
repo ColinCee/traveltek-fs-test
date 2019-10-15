@@ -47,7 +47,7 @@ export const Departure = () => {
   const { maxCount, maxDate } = getDateWithMaxFlights()
   return (
     <div>
-      <Header as='h2'>Day with most departures from MAN</Header>
+      <h2>Day with most departures from MAN</h2>
       <Icon name='plane' />
       {maxCount} flights on {maxDate}
     </div>

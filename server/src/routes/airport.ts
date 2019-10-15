@@ -1,5 +1,5 @@
 import express from 'express'
-import { filterByDepature, filterByDepartureAndArrival } from '@src/parser/AirportParser'
+import { filterByDepature, filterByDepartureAndArrival } from '@src/filters/airport'
 const departure = express.Router()
 
 // middleware that is specific to this router
