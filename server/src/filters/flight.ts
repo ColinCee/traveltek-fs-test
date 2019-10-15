@@ -7,8 +7,19 @@ const flightClasses: { [index: number]: string } = {
   3: 'BUSINESS'
 }
 
-export async function filterByFlightClass(classNum: number) {
+export async function filterByFlightClass(classNum: any) {
   const className = flightClasses[classNum]
 
-  return filter(json => json.outflightclass === className || json.inflightclass === className)
+  return filter(({ outflightclass, inflightclass }) => {
+    if (outflightclass.toUpperCase() === className) {
+      return true
+    }
+
+    if (inflightclass.toUpperCase() === className) {
+      return true
+    }
+
+    return false
+  })
 }
+

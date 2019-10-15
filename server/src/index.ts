@@ -1,6 +1,7 @@
 import express from 'express'
 import departure from './routes/airport';
 import cors from 'cors'
+import flight from './routes/flight';
 
 const app = express();
 app.use(cors())
@@ -14,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/departure', departure)
-
+app.use('/flight', flight)
 // start the Express server
 app.listen(port, () => {
   console.log(`server started at http://localhost:${port}`);

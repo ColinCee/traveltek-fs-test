@@ -14,3 +14,15 @@ export const filter = async (filterFunction: (json: IJourney) => boolean) => {
 
   return output
 }
+
+export const count = async (countFunction: (json: IJourney) => boolean) => {
+  let count = 0
+
+  await csv().fromFile(csvPath).subscribe(async (json) => {
+    if (countFunction(json)) {
+      count += 1
+    }
+  })
+
+  return { count }
+}
