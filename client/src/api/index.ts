@@ -12,10 +12,13 @@ const airports = {
 }
 
 const flightApi = {
-  byClass: (classNum: number) => baseAxios.get('/flight/byClass/' + classNum),
+  byClass: (type: ClassType) => baseAxios.get('/flight/byClass/' + type),
   totalCount: () => baseAxios.get('/flight/total')
 }
 
+export enum ClassType {
+  BUSINESS = 3
+}
 export default {
   ...airports,
   ...flightApi

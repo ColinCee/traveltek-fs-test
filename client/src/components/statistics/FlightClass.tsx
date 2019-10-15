@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import api from '../../api'
-import { Icon } from 'semantic-ui-react'
+import api, { ClassType } from '../../api'
 import styled from 'styled-components'
 
 export const FlightClass = () => {
   const [percentage, setPercentage] = useState(0)
 
   const fetchData = async () => {
-    let { data } = await api.byClass(3)
+    let { data } = await api.byClass(ClassType.BUSINESS)
     const businessClassCount = Object.keys(data).length
     const totalCount = await api.totalCount()
 

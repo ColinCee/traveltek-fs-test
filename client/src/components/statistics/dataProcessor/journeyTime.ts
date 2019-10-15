@@ -21,7 +21,6 @@ const processOutLeg = (journey: IJourney) => {
   const diff = outArrival.diff(outDepart)
   const duration = moment.duration(diff)
   totalJourneyTime.add(duration)
-  console.log(totalJourneyTime)
   journeyCount++;
 }
 

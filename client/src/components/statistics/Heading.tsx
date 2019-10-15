@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container, Image, Header, Divider } from 'semantic-ui-react'
+import { Image, Header, Divider } from 'semantic-ui-react'
 
 export const Heading = () => {
   const component = ({ className, children }: any) => {
