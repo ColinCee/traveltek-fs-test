@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import api from '../../api'
 import { object } from 'prop-types'
 import { Icon, Header } from 'semantic-ui-react'
+import styled from 'styled-components'
 
 export const Departure = () => {
   const [departData, setDepartData]: [any[], any] = useState([])
@@ -44,12 +45,15 @@ export const Departure = () => {
     fetchData()
   }, [])
 
+  const Component = styled.div`
+    margin-bottom: 2em;
+  `
   const { maxCount, maxDate } = getDateWithMaxFlights()
   return (
-    <div>
+    <Component>
       <h2>Day with most departures from MAN</h2>
       <Icon name='plane' />
       {maxCount} flights on {maxDate}
-    </div>
+    </Component>
   )
 }
