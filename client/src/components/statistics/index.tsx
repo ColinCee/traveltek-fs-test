@@ -5,6 +5,7 @@ import { Departure } from './Departure'
 import { JourneyTime } from './JourneyTime'
 import { FlightClass } from './FlightClass'
 import { SwedishFlights } from './SwedishFlights'
+import { HongKongFlights } from './HongKongFlights'
 
 export const Statistics: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ export const Statistics: React.FC = () => {
       <Departure />
       <FlightClass />
       <SwedishFlights />
+      <HongKongFlights />
     </Container>
   )
 }
