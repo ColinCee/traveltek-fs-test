@@ -5,9 +5,10 @@ const baseAxios = axios.create({
   baseURL: 'http://localhost:8080',
 })
 
-const departureApi = {
-  departure: (airport: string) => baseAxios.get(`/departure/${airport}`),
-  journey: (departure: string, arrival: string) => baseAxios.get(`/departure/${departure}/${arrival}`),
+const airports = {
+  destination: (airport: string) => baseAxios.get(`/airport/destination/${airport}`),
+  departure: (airport: string) => baseAxios.get(`/airport/depart/${airport}`),
+  journey: (departure: string, arrival: string) => baseAxios.get(`/airport/${departure}/${arrival}`),
 }
 
 const flightApi = {
@@ -16,6 +17,6 @@ const flightApi = {
 }
 
 export default {
-  ...departureApi,
+  ...airports,
   ...flightApi
 }

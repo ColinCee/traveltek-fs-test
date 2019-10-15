@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("Hello world!");
 });
 
-app.use('/departure', departure)
+app.use('/airport', departure)
 app.use('/flight', flight)
 // start the Express server
 app.listen(port, () => {

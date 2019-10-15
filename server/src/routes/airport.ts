@@ -1,5 +1,5 @@
 import express from 'express'
-import { filterByDepature, filterByDepartureAndArrival } from '@src/filters/airport'
+import { filterByDepature, filterByDepartureAndArrival, filterByArrival } from '@src/filters/airport'
 const departure = express.Router()
 
 // middleware that is specific to this router
@@ -8,9 +8,15 @@ departure.use(function timeLog(req, res, next) {
   next()
 })
 
-departure.get('/:airport', async (req, res) => {
+departure.get('/depart/:airport', async (req, res) => {
   const airport = req.params.airport
   const data = await filterByDepature(airport)
+  res.send(data)
+})
+
+departure.get('/destination/:airport', async (req, res) => {
+  const airport = req.params.airport
+  const data = await filterByArrival(airport)
   res.send(data)
 })
 
